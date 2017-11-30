@@ -1,0 +1,12 @@
+FROM debian:jessie 
+LABEL com.docker.v2c.component=detective \ 
+      com.docker.v2c.component.category=application \ 
+      com.docker.v2c.component.builtin=1 \ 
+      com.docker.v2c.component.description=Detects\ and\ captures\ WebLogic\ installed\ in\ /root/Oracle/Middleware \ 
+      com.docker.v2c.component.rel=v2c/app.weblogic-wls1036-provisioner:10.3 
+WORKDIR /v2c/disk 
+#ENTRYPOINT ["/bin/sh", "-c"] 
+CMD cd "$(find -type d  -name 'wlserver_10.3*')" && tar cv --transform 's,^\.,/opt/oracle11g/10.3.6,' . 
+ #CMD find -type d -name 'weblogic*' -exec tar cv {} \; 
+ #CMD find /v2c/disk/ -type d -name 'weblogic*'
+
