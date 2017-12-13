@@ -6,5 +6,5 @@ LABEL com.docker.v2c.component=provisioner \
 COPY ./tar-append /bin/tar-append 
 COPY ./app.weblogic-wls1036/Dockerfile /Dockerfile 
 ENTRYPOINT ["/bin/sh","-c"] 
-CMD ["tar-append /Dockerfile"] 
+CMD ["tar-append /Dockerfile"]
 

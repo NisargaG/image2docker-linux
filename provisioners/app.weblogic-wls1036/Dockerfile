@@ -1,1 +1,1 @@
-#Weblogic
+#Weblogic Dockerfile
