@@ -2,9 +2,8 @@ FROM alpine
 LABEL com.docker.v2c.component=provisioner \ 
       com.docker.v2c.component.category=application \ 
       com.docker.v2c.component.builtin=1 \ 
-      com.docker.v2c.component.description=Adds\ /opt/oracle11g/10.3.6\ to\ the\ image. 
+      com.docker.v2c.component.description=Adds\ /opt/jboss7.1\ to\ the\ image. 
 COPY ./tar-append /bin/tar-append 
-COPY ./app.weblogic-wls1036/Dockerfile /Dockerfile 
+COPY ./app.jboss7.1/Dockerfile /Dockerfile 
 ENTRYPOINT ["/bin/sh","-c"] 
 CMD ["tar-append /Dockerfile"]
-

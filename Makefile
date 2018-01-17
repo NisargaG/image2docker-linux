@@ -101,8 +101,14 @@ builtin-prep:
 	@docker build -t v2c/oracle-jdk-detective:v1.8  -f ./detectives/app.oracle-jdk1.8.df ./detectives/        
 	@docker build -t v2c/oracle-jdk-provisioner:v1.8 -f ./provisioners/app.oracle-jdk1.8.df ./provisioners/
 
-	@docker build -t v2c/app.tomcat8-detective:v8  -f ./detectives/app.tomcat8.df ./detectives/
-	@docker build -t v2c/app.tomcat8-provisioner:v8 -f ./provisioners/app.tomcat8.df ./provisioners/	
+	@docker build -t v2c/app.weblogic-detective:v10.36 -f ./detectives/app.weblogic1036.df ./detectives/
+	@docker build -t v2c/app.weblogic-provisioner:v10.36 -f ./provisioners/app.weblogic1036.df ./provisioners/
+
+#	@docker build -t v2c/app.jboss-detective:v7.1 -f ./detectives/app.jboss7.1.df ./detectives/
+#	@docker build -t v2c/app.jboss-provisioner:v7.1 -f ./provisioners/app.jboss7.1.df ./provisioners/
+
+#	@docker build -t v2c/app.tomcat8-detective:v8  -f ./detectives/app.tomcat8.df ./detectives/
+#	@docker build -t v2c/app.tomcat8-provisioner:v8 -f ./provisioners/app.tomcat8.df ./provisioners/	
 #	@docker build -t v2c/ubuntu-detective:v16.04   -f ./detectives/os.ubuntu16.04.df ./detectives/
 #	@docker build -t v2c/ubuntu-provisioner:v16.04 -f ./provisioners/os.ubuntu16.04.df ./provisioners/
 

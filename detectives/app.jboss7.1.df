@@ -1,0 +1,11 @@
+FROM debian:jessie
+LABEL com.docker.v2c.component=detective \
+      com.docker.v2c.component.category=config \
+      com.docker.v2c.component.builtin=1 \
+      com.docker.v2c.component.description=Detects\ and\ captures\ jboss\ installed\ in\ /opt/jboss7.1 \
+      com.docker.v2c.component.rel=v2c/app.jboss-provisioner:v7.1
+WORKDIR /v2c/disk
+#ENTRYPOINT ["/bin/sh", "-c"]
+CMD cd "$(find -type d  -name 'jboss-as-7.1.1*')" && tar cv --transform 's,^\.,/opt/jboss7.1,' . 
+#CMD find -type d -name 'jboss-as-7.1.*' -exec tar cv {} \; 
+#CMD find /v2c/disk/ -type d -name 'jboss-as-7.1.*' 
